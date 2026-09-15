@@ -1,0 +1,8 @@
+title: IBM Planning Analytics — Variance Analysis Agent with IBM Bob and Orchestrate
+description: A reference implementation for AI-powered variance analysis reporting in IBM Planning Analytics using watsonx Orchestrate and IBM Bob.
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

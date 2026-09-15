@@ -6,6 +6,34 @@ run MDX queries, and generate variance analysis PowerPoint decks.
 
 ---
 
+## Why use watsonx Orchestrate for Planning Analytics reporting?
+
+Planning Modelers are often tasked with producing a PowerPoint analysis out of a Planning Analytics cube. Nowadays, agentic desktop apps make that task very easy. With IBM Bob, you just need to add the `ibm-pa-tools` MCP server connected to your Planning Analytics instance and add a `pptx` skill — then simply ask Bob to generate the PowerPoint.
+
+![Bob generating a variance analysis deck from Planning Analytics](assets/wxo_planning_variance_analysis_step1.gif)
+
+However, there are some caveats to this approach:
+
+1. **Requires a local desktop AI assistant** — every user must install and configure the toolchain.
+2. **Not reproducible** — each generation is a fresh LLM call; no template is enforced, so output varies run to run.
+3. **Slow and resource-intensive** — it takes a long time, requires a frontier model, and a connection outside of your organisation.
+
+IBM watsonx Orchestrate can be taught by Bob to accomplish the same task. It uses a smaller, open-source model (here `gpt-oss-120b`) that can be deployed on-premises. It is guided through a pre-defined process to gather data from the Planning Analytics cube, derive insights, and fill a PowerPoint template:
+
+![IBM Orchestrate generating the variance deck end-to-end](assets/wxo_planning_variance_analysis_step2.gif)
+
+The benefits of using Orchestrate are significant:
+
+1. **Reproducible workflow** — the same flow runs the same way every time.
+2. **Enterprise template** — a common template with your organisation's graphic charter is enforced.
+3. **No local tooling** — nothing needs to be installed on the user's machine.
+
+This can also be deployed directly to the **Planning Analytics Chat** *(animated GIF coming soon)*.
+
+> **Comming soon:** The video of the Chat within Planning Analytics.
+
+---
+
 ## Project structure
 
 ```
