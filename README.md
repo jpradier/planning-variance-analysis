@@ -28,7 +28,8 @@ The benefits of using Orchestrate are significant:
 
 1. **Reproducible workflow** — the same flow runs the same way every time.
 2. **Enterprise template** — a common template with your organisation's graphic charter is enforced.
-3. **No local tooling** — nothing needs to be installed on the user's machine.
+3. **No local install** — nothing needs to be installed on the user's machine.
+4. **Bound to your organisation** — with Orchestrate, you have the option to stay within your organisation network — no data can leak outside.
 
 This can also be deployed directly to the **Planning Analytics Chat** *(animated GIF coming soon)*.
 
