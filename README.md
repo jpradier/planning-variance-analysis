@@ -4,6 +4,8 @@ Watsonx Orchestrate project wiring the **IBM Planning Analytics (TM1)** server
 `Region03N` to an AI agent (`pa_agent`) that can explore cubes, manage sandboxes,
 run MDX queries, and generate variance analysis PowerPoint decks.
 
+[![View on GitHub](https://img.shields.io/badge/GitHub-planning--variance--analysis-161616?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jpradier/planning-variance-analysis)
+
 ---
 
 ## Why use watsonx Orchestrate for Planning Analytics reporting?
