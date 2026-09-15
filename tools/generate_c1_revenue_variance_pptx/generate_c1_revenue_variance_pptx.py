@@ -388,14 +388,6 @@ def _fill_slide1(slide, meta, kpi):
               f"{meta.get('cube','C1_Revenue')} Cube · {meta.get('subtitle','Total Company · Actual')}",
               color_hex=_MUTED)
 
-    # s[6], s[11], s[16], s[21]: KPI column label boxes — move up into the top
-    # portion of each card so they don't overlap the large value text below.
-    # Original top=2516088 EMU (2.75"), new top=1800072 EMU (1.97") with taller box.
-    _LABEL_TOP = 1800072   # ~1.97" — sits just below the card header line
-    _LABEL_H   = 457200    # ~0.50" — enough for two 10pt lines with spacing
-    for label_shape_idx in (6, 11, 16, 21):
-        _set_xfrm(s[label_shape_idx], top_emu=_LABEL_TOP, cy_emu=_LABEL_H)
-
     # s[6]: label for KPI card A (2 paragraphs)
     _set_text_multi(s[6], [
         {"text": f"{pa} Full Year", "color_hex": "6B8CAE"},
@@ -484,13 +476,14 @@ def _fill_slide2(slide, trend):
 
     insights = trend.get("insights", [{}, {}, {}])
 
-    # Widen and raise all three tag badge boxes so multi-word tags like
-    # "PEAK MONTH" render on one line (7pt bold).  Original widths were sized
-    # for single short words ("GROWTH"=0.45", "PEAK"=0.28", "DIP"=0.17").
-    # New size: 1.60" wide × 0.18" tall, keeping the same left edge.
+    # Widen all three tag badge pill backgrounds AND the text boxes inside them
+    # so multi-word tags like "PEAK MONTH" render fully on one line (7pt bold).
+    # Original pill widths were sized for short words; new size: 1.60" wide.
     _TAG_W  = 1463040   # 1.60" in EMU
     _TAG_H  =  164592   # 0.18" in EMU — allows one tightly-spaced 7pt line
-    for tag_idx in (7, 13, 19):
+    for pill_idx in (6, 12, 18):          # light-blue background pill shapes
+        _set_xfrm(s[pill_idx], cx_emu=_TAG_W, cy_emu=_TAG_H)
+    for tag_idx in (7, 13, 19):           # text label shapes inside pills
         _set_xfrm(s[tag_idx], cx_emu=_TAG_W, cy_emu=_TAG_H)
 
     # Card 0: tag=s[7], title=s[8], body=s[9]
