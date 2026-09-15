@@ -1,0 +1,19 @@
+kind: mcp
+name: ibm-pa-tools
+description: |-
+  The Planning Analytics MCP Server provides structured, callable capabilities that allow external agents and AI-enabled services to interact with IBM Planning Analytics systems. Designed for agentic workflows, these intent-level tools support exploration, analysis, and interpretation of Planning Analytics models.
+
+  Features:
+
+      Discover available Planning Analytics resources
+      Inspect cube structures and metadata
+      Retrieve data and analytical results
+      Generate context-aware insights and
+connections:
+- PlanningAnalyticsConnection
+- PlanningAnalyticsConnection
+transport: streamable_http
+url: https://<your_planning_instance>/v0/agentic-ai/ibm-pa-tools/mcp
+tools:
+- '*'
+spec_version: v1

@@ -1,0 +1,18 @@
+app_id: PlanningAnalyticsConnection
+spec_version: v1
+kind: connection
+environments:
+  draft:
+    server_url: <your_planning_url>
+    kind: basic
+    type: team
+    app_config:
+      header:
+        content-type: application/x-www-form-urlencoded
+  live:
+    server_url: https://eu-central-1.planninganalytics.saas.ibm.com/
+    kind: basic
+    type: team
+    app_config:
+      header:
+        content-type: <your_planning_url>

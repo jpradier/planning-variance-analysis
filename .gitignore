@@ -1,0 +1,42 @@
+workspace/
+tmp/
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# Environment
+.env
+
+# Node.js
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+.bob/
+.vscode/
+
+# Orchestrate extension
+workspace_config.yaml
+
+
+# Credentials & secrets
+*.key
+*.pem
+*.p12
+*.pfx
+*.cert
+*.cer
+.env.*
+!.env.example
+secrets/
+credentials/
+*credentials*.json
+*apikey*
+*api_key*
+*secret*
