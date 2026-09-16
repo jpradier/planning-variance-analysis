@@ -31,9 +31,11 @@ The benefits of using Orchestrate are significant:
 3. **No local install** — nothing needs to be installed on the user's machine.
 4. **Bound to your organisation** — with Orchestrate, you have the option to stay within your organisation network — no data can leak outside.
 
-This can also be deployed directly to the **Planning Analytics Chat** *(animated GIF coming soon)*.
+This can also be deployed directly to the **Planning Analytics Chat**  to expose this capability to your Planning Analytics users.
 
-> **Comming soon:** The video of the Chat within Planning Analytics.
+As administrator, configure the **IBM watsonx Orchestrate integration** and copy/paste your public/private key pair accross Orchestrate and Plannning to enable a **secured communication**. Et voilà ! Your Planning Analytics users can enjoy the Variance Analysis Deck capability through the AI Chat.
+![Exposing the variance deck generation capability in the Planning Analytics Chat](assets/wxo_planning_variance_analysis_step3.gif)
+
 
 ---
 
