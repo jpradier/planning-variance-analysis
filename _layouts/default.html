@@ -374,8 +374,11 @@
       });
 
       // Wrap images in .demo-block for consistent GIF styling
+      // Skip badge/shield images — they should stay inline at natural size
       content.querySelectorAll('img').forEach(img => {
-        if (!img.closest('.demo-block')) {
+        const src = img.getAttribute('src') || '';
+        const isBadge = src.includes('shields.io') || src.includes('img.shields') || src.includes('badge');
+        if (!isBadge && !img.closest('.demo-block')) {
           const wrapper = document.createElement('div');
           wrapper.className = 'demo-block';
           img.parentNode.insertBefore(wrapper, img);
