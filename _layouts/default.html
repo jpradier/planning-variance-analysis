@@ -336,17 +336,7 @@
 
       // Hoist the page-level h1 (README title) out — it's in the hero already
       const h1 = content.querySelector('h1');
-      if (h1) {
-        const toRemove = [];
-        let node = h1;
-        while (node) {
-          const next = node.nextSibling;
-          if (node.nodeType === 1 && node.tagName === 'H2') break;
-          toRemove.push(node);
-          node = next;
-        }
-        toRemove.forEach(n => n.remove());
-      }
+      if (h1) h1.remove();
 
       // Wrap sections into cards
       const children = Array.from(content.childNodes);
