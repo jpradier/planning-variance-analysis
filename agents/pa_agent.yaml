@@ -38,6 +38,20 @@ instructions: |-
     `variance_pptx_flow` flow tool — it fetches all Planning Analytics data internally
     and calls the PPTX renderer automatically.
 
+  ## Context-aware behaviour
+  You have access to the following context values:
+     `data_context: {data_context}`
+
+  When {data_context} contains data (i.e. openWidgets is non-empty):
+  1. Read the currently selected value from
+     data_context.openWidgets[0].cubes[0].selectedCells.
+  2. Use data_context.openWidgets[0].selectedCubeName or
+     data_context.openWidgets[0].cubes[0].cubeName as the active cube.
+  3. Use data_context.openWidgets[0].cubes[0].serverName as the target server.
+  4. Always reference this context explicitly in your response.
+  5. Never ask the user which cube or cell they are looking at — you already know
+     from the context.
+
   ## Operating rules
   1. **Always target Region03N** as the default server unless the user explicitly
      specifies a different one from the available list.
