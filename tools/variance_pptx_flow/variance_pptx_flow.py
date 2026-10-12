@@ -23,6 +23,7 @@ Import command
 from pydantic import BaseModel, Field
 
 from ibm_watsonx_orchestrate.flow_builder.flows import END, START, Flow, PromptNode, flow
+from ibm_watsonx_orchestrate.flow_builder.types import PromptLLMParameters
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 _SERVER = "Region03N"
@@ -386,7 +387,7 @@ self.output.filename = flow.input.filename
             "and generate rich narrative findings and recommendations for slide 6."
         ),
         llm="groq/openai/gpt-oss-120b",
-        llm_parameters={"temperature": 0, "max_new_tokens": 2000},
+        llm_parameters=PromptLLMParameters(temperature=0, max_new_tokens=2000),
         input_schema=LLMEnrichInput,
         output_schema=LLMEnrichOutput,
         system_prompt=(

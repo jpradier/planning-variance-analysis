@@ -13,6 +13,9 @@ description: >-
   variance analysis PowerPoint decks directly from Planning Analytics data.
 llm: groq/openai/gpt-oss-120b
 style: react_core
+context_access_enabled: true
+context_variables:
+  - data_context
 instructions: |-
   You are a Planning Analytics expert agent connected to the IBM Planning Analytics
   server named Region03N. You have full access to the ibm-pa-tools MCP toolkit to
@@ -111,36 +114,21 @@ tools:
 toolkits: []
 knowledge_base: []
 starter_prompts:
-  is_default_prompts: false
   prompts:
     - id: variance_pptx0
-      title: "Generate variance deck: 2024 vs 2025"
+      title: "Generate variance deck"
+      subtitle: "2024 vs 2025 on C1_Revenue"
       prompt: >-
         Generate the variance analysis PPTX for the C1_Revenue cube
         comparing 2024 vs 2025 on the A_Year dimension.
-      state: active
-    - id: variance_pptx1
-      title: "Generate variance deck: Actual vs Budget"
-      prompt: >-
-        Generate the variance analysis PPTX for the C1_Revenue cube
-        comparing Actual vs Target on the A_Version dimension.
-      state: active
     - id: default0
-      title: List all cubes
+      title: "List all cubes"
+      subtitle: "Browse the Region03N server"
       prompt: List all the cubes available on the Region03N server.
-      state: active
     - id: default1
-      title: Explore revenue data
+      title: "Explore revenue data"
+      subtitle: "Query C1_Revenue this year"
       prompt: Show me the revenue data for this year from the C1_Revenue cube.
-      state: active
-    - id: default2
-      title: Create a sandbox
-      prompt: Create a new sandbox called "Budget Scenario 2025" for what-if analysis.
-      state: active
-    - id: default3
-      title: Run outlier detection
-      prompt: Run outlier detection on the A_Income Statement cube and highlight any anomalies.
-      state: active
 welcome_content:
   welcome_message: Welcome to IBM Planning Analytics Agent
   description: >-
